@@ -1,8 +1,8 @@
-# Cram-o-matic Optimiser
+# Cram-o-Matic Optimiser
 In the _Isle of Armor_ downloadable content for _Pokémon Sword_ and _Pokémon Shield_, there is an interactive object
 called the Cram-o-Matic, which allows combination of four items to produce a new item.
 In-game, this is functionally a black-box, without any information on what the output will be.
-Work from the community has revealed the internal workings of the Cram-o-matic, as documented on
+Work from the community has revealed the internal workings of the Cram-o-Matic, as documented on
 [Serebii](https://www.serebii.net/swordshield/cram-o-matic.shtml).
 
 This project allows a user to optimise their output from the Cram-o-Matic, by identifying the most efficient 
@@ -21,9 +21,9 @@ To craft a _Metal Coat_, the items in the Cram-o-Matic must reach a value range 
 _Steel_ type. 
 
 ### Special cases
-- There are a set of guaranteed Cram-o-matic combinations, which combine three of a certain item with any other item,
+- There are a set of guaranteed Cram-o-Matic combinations, which combine three of a certain item with any other item,
   as shown on [Serebii](https://www.serebii.net/swordshield/cram-o-matic.shtml). This is order-dependent.
-- "Apricorn" items are designed for a specific use with the Cram-o-Matic, combining four apricorns to output Pokéballs,
+- _Apricorn_ items are designed for a specific use with the Cram-o-Matic, combining four apricorns to output Pokéballs,
   and hold 0 value when used outside that scenario.
 
 ## Optimising the Cram-o-Matic
@@ -52,10 +52,16 @@ current item supply, by picking the best combination of items that will achieve 
 - Promote on Reddit for feature requests and bug highlighting
 - Dockerise for discrete deployment
 
+### Issues
+- _Enigma Berry_ is not valued on Serebii's page, so has been set to value 0
+- Ensure that the first item's type will not change output item 
+  (like NORMAL type with range 131-140 producing TR42 instead of Rare Candy)
+- Dynite Ore, Galarica Wreath and other Crown Tundra items are not in input_items.json 
 
 ### Acknowledgements
 [Serebii](https://www.serebii.net/swordshield/cram-o-matic.shtml): without their guide to the Cram-o-Matic, _many_
 players would have struggled to use this extremely helpful device.
 
 [ThirdSpartan](https://github.com/ThirdSpartan/ThirdSpartan.github.io): found during the development of this project,
-their recipe finder proved that users actually welcomed such helpful tools.
+their recipe finder proved that users actually welcomed such helpful tools, and they spent the time transcribing items
+into JSON format, which was continued for this project.
