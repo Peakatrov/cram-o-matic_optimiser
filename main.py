@@ -2,7 +2,7 @@ from pprint import pprint
 
 from data.game_variables import item_values
 from utils.combination_finding import find_combinations_to_hit_target
-from utils.item_gathering import create_item_dataframe, list_unique_item_values
+from utils.item_gathering import create_item_dataframe
 from utils.recipe_handling import gather_item_recipes, search_item_recipes
 
 

@@ -31,6 +31,9 @@ _Steel_ type.
 The most simple use of this project is to optimise the number of a desired item that can be created from a user's 
 current item supply, by picking the best combination of items that will achieve the desired item's value range and type.
 
+Bag size = 4
+Maximum weight W = Minimum Weight = 4
+
 ### Deeper use cases 
 - Perform multi-level optimisation to choose which lower-value items can be combined into output higher-value items
   suitable for using in crafting the desired item. For example, combining _Nuggets_ into _Big Nuggets_ to use in crafting 

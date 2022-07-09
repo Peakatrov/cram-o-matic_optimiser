@@ -1,18 +1,18 @@
 import json
-from typing import Any, Dict, List, Union
+from typing import Dict, List, Union
 from itertools import chain
 
 
 class ItemRecipe:
     def __init__(self,
                  value_range: range,
-                 required_item_types: Union[bool, List[Union[bool, Any]]] = False,
-                 required_items: Union[bool, List[Union[bool, Any]]] = False,
+                 required_first_type: Union[bool, str] = False,
+                 required_item: Union[bool, List[Union[bool, str]]] = False,
                  likelihood: Union[bool, float] = False
                  ):
         self.value_range = value_range
-        self.required_item_types = required_item_types
-        self.required_items = required_items
+        self.required_first_type = required_first_type
+        self.required_item = required_item
         self.likelihood = likelihood
 
     @classmethod
@@ -23,19 +23,18 @@ class ItemRecipe:
             required_item
     ):
         value_range = range(lowest_value, highest_value, 1)
-        required_items = [required_item, "Any", required_item, required_item]
-        return cls(value_range=value_range, required_items=required_items)
+        required_item = required_item
+        return cls(value_range=value_range, required_item=required_item)
 
     @classmethod
     def from_type(
             cls,
             highest_value,
-            required_item_type,
+            required_first_type,
             likelihood=False
     ):
         value_range = range(highest_value - 9, highest_value, 1)
-        required_item_types = [required_item_type, "Any", "Any", "Any"]
-        return cls(value_range=value_range, required_item_types=required_item_types, likelihood=likelihood)
+        return cls(value_range=value_range, required_first_type=required_first_type, likelihood=likelihood)
 
 
 class Item:
@@ -52,10 +51,10 @@ class Item:
         print(f"Item: {self.name}\nRecipes: \n")
         for recipe in self.recipes:
             print(f"Value range: {recipe.value_range}")
-            if recipe.required_item_types:
-                print(f"Required item types: {recipe.required_item_types}\n")
-            if recipe.required_items:
-                print(f"Required items: {recipe.required_items}\n")
+            if recipe.required_first_type:
+                print(f"Required first item type: {recipe.required_first_type}\n")
+            if recipe.required_item:
+                print(f"Required items: {recipe.required_item}\n")
             if recipe.likelihood:
                 print(f"Likelihood of occurrence: {recipe.likelihood}\n")
 
@@ -68,6 +67,7 @@ def gather_item_recipes_by_type(recipe_location='data/recipes_by_type.json'):
 
     item_list = []
 
+    # TODO: check whether there are performance gains by reformatting the data structure early
     for item_type, tiered_list in recipe_dict.items():
         for highest_value, possible_output_items in tiered_list.items():
             if isinstance(possible_output_items, str):
@@ -75,7 +75,7 @@ def gather_item_recipes_by_type(recipe_location='data/recipes_by_type.json'):
                     Item(
                         name=possible_output_items,
                         recipes=[ItemRecipe.from_type(
-                            required_item_type=item_type,
+                            required_first_type=item_type,
                             highest_value=int(highest_value)
                         )]
                     )
@@ -87,7 +87,7 @@ def gather_item_recipes_by_type(recipe_location='data/recipes_by_type.json'):
                         Item(
                             name=output_item,
                             recipes=[ItemRecipe.from_type(
-                                required_item_type=item_type,
+                                required_first_type=item_type,
                                 highest_value=int(highest_value),
                                 likelihood=likelihood
                             )]
@@ -113,6 +113,14 @@ def gather_item_recipes_for_guaranteed(recipe_location='data/recipes_for_guarant
     return item_list
 
 
+# TODO: complete
+def simplify_recipes(recipe_list):
+    # For all recipes where range is an exact match...
+    # Flatten all recipes' required_item_type into required_type_list
+    # If equal to full list of pokemon_types, completely drop requirement
+    return recipe_list
+
+
 def simplify_items(item_list):
     # Expects List of Item objects with a single recipe in self.recipes List
     # Return a single Item with one to multiple recipes in self.recipes List
@@ -124,7 +132,8 @@ def simplify_items(item_list):
         if not all(item.name == item_list[0].name for item in item_list):
             raise ValueError(f"All items should have consistent self.name, not: {[item.name for item in item_list]}")
         else:
-            simplified_recipes = [recipe for recipes in [item.recipes for item in item_list] for recipe in recipes]
+            recipe_list = [recipe for recipes in [item.recipes for item in item_list] for recipe in recipes]
+            simplified_recipes = simplify_recipes(recipe_list)
 
     return Item(
         name=item_list[0].name,
