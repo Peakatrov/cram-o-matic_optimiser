@@ -1,0 +1,69 @@
+Name,Type,Value,Count,Reserve
+Amulet Coin,Normal,32,1,FALSE
+Armorite Ore,Fighting,28,678,TRUE
+Balm Mushroom,Grass,24,16,FALSE
+Berry Sweet,Fairy,30,2,FALSE
+Big Nugget,Ground,38,3,FALSE
+Blunder Policy,Dark,24,0,TRUE
+Bug Memory,Bug,40,0,FALSE
+Charcoal,Fire,32,1,FALSE
+Chipped Pot,Ground,36,0,FALSE
+Cleanse Tag,Ghost,24,0,FALSE
+Clover Sweet,Fairy,30,4,FALSE
+Comet Shard,Ice,34,22,FALSE
+Cracked Pot,Ground,30,2,FALSE
+Dark Memory,Dark,40,1,FALSE
+Destiny Knot,Psychic,28,2,TRUE
+Dragon Memory,Dragon,40,1,FALSE
+Dubious Disc,Dark,32,0,FALSE
+Dynite Ore,Dragon,28,338,TRUE
+Electric Memory,Electric,40,1,FALSE
+Eviolite,Dragon,32,1,FALSE
+Expert Belt,Fighting,32,1,FALSE
+Fairy Memory,Fairy,40,1,FALSE
+Fighting Memory,Fighting,40,0,FALSE
+Fire Memory,Fire,40,0,FALSE
+Flower Sweet,Fairy,30,2,FALSE
+Flying Memory,Flying,40,0,FALSE
+Ghost Memory,Ghost,40,1,FALSE
+Grass Memory,Grass,40,0,FALSE
+Grip Claw,Bug,26,1,FALSE
+Ground Memory,Ground,40,0,FALSE
+Ice Memory,Ice,40,1,FALSE
+King's Rock,Steel,32,1,TRUE
+Love Sweet,Fairy,30,0,FALSE
+Macho Brace,Fighting,26,0,FALSE
+Metal Coat,Steel,24,4,FALSE
+Metronome,Steel,22,2,FALSE
+Pearl String,Water,30,22,FALSE
+Poison Barb,Poison,32,1,FALSE
+Poison Memory,Poison,40,0,FALSE
+PP Max,Normal,40,6,TRUE
+PP Up,Normal,38,53,FALSE
+Prism Scale,Water,26,5,FALSE
+Protector,Rock,24,3,FALSE
+Psychic Memory,Psychic,40,1,FALSE
+Quick Claw,Normal,26,1,FALSE
+Quick Powder,Normal,28,1,FALSE
+Rare Candy,Psychic,40,13,FALSE
+Razor Claw,Dark,26,4,FALSE
+Reaper Cloth,Ghost,32,0,FALSE
+Ribbon Sweet,Fairy,30,3,FALSE
+Rock Memory,Rock,40,0,FALSE
+Rocky Helmet,Rock,26,2,TRUE
+Room Service,Psychic,24,1,TRUE
+Silk Scarf,Normal,22,1,FALSE
+Smoke Ball,Poison,22,1,FALSE
+Spell Tag,Ghost,26,2,FALSE
+Star Sweet,Fairy,30,3,FALSE
+Steel Memory,Steel,40,0,FALSE
+Strawberry Sweet,Fairy,30,2,FALSE
+Sweet Apple,Grass,30,2,FALSE
+Tart Apple,Grass,30,0,FALSE
+Upgrade,Normal,30,0,FALSE
+Water Memory,Water,40,0,FALSE
+Weakness Policy,Dark,30,0,TRUE
+Whipped Dream,Fairy,26,1,FALSE
+Wide Lens,Dark,22,1,FALSE
+Wishing Piece,Poison,28,248,FALSE
+Zoom Lens,Dark,22,1,FALSE
