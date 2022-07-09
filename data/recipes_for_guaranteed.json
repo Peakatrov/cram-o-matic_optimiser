@@ -1,0 +1,52 @@
+{
+  "PP Up": {
+    "lowest_value": 84,
+    "highest_value": 124,
+    "required_item": "Dynite Ore"
+  },
+  "Big Mushroom": {
+    "lowest_value": 6,
+    "highest_value": 46,
+    "required_item": "Tiny Mushroom"
+  },
+  "Big Pearl": {
+    "lowest_value": 18,
+    "highest_value": 58,
+    "required_item": "Pearl"
+  },
+  "Star Piece": {
+    "lowest_value": 24,
+    "highest_value": 64,
+    "required_item": "Stardust"
+  },
+  "Balm Mushroom": {
+    "lowest_value": 42,
+    "highest_value": 82,
+    "required_item": "Big Mushroom"
+  },
+  "Big Nugget": {
+    "lowest_value": 44,
+    "highest_value": 84,
+    "required_item": "Nugget"
+  },
+  "Pearl String": {
+    "lowest_value": 36,
+    "highest_value": 76,
+    "required_item": "Big Pearl"
+  },
+  "Comet Shard": {
+    "lowest_value": 60,
+    "highest_value": 100,
+    "required_item": "Star Piece"
+  },
+  "Ability Capsule": {
+    "lowest_value": 120,
+    "highest_value": 160,
+    "required_item": "Rare Candy"
+  },
+  "Gold Bottle Cap": {
+    "lowest_value": 120,
+    "highest_value": 160,
+    "required_item": "Bottle Cap"
+  }
+}

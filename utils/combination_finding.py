@@ -5,13 +5,13 @@ from typing import List
 
 def find_combinations_to_hit_target(
         potential_numbers: List[int],
-        target: int,
+        target_range: range,
         count_of_numbers: int = 4,
-        unique_elements=True
+        unique_elements=False
 ) -> List[List[int]]:
     """
     :param potential_numbers:
-    :param target:
+    :param target_range:
     :param count_of_numbers:
     :param unique_elements: indicates whether combinations must contain unique elements, or not
     :return:
@@ -24,9 +24,9 @@ def find_combinations_to_hit_target(
     else:
         possible_combinations = combinations_with_replacement(potential_numbers, count_of_numbers)
 
-    # Identify combinations that can add up to
+    # Identify combinations that can add up to the target
     for i in possible_combinations:
-        if sum(i) == target:
+        if sum(i) in target_range:
             # Turns the tuple of numbers into list of strings
             # Then joins them into a single string
             # This allows hashing for the set
